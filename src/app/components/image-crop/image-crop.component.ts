@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ImageData } from '../../models/image.model';
 import { Location } from '@angular/common';
+// import 'cropperjs/dist/cropper.css';
 import Cropper from 'cropperjs';
 
 @Component({
@@ -10,10 +11,11 @@ import Cropper from 'cropperjs';
 })
 export class ImageCropComponent implements OnInit {
 
-  @ViewChild('imgCanvas', { static: true }) imgCanvas: ElementRef;
-  @ViewChild('prev1', { static: true }) prev1: ElementRef;
-  @ViewChild('prev2', { static: true }) prev2: ElementRef;
-  @ViewChild('prev3', { static: true }) prev3: ElementRef;
+  @ViewChild('imgCanvas', { static: true }) public imgCanvas: ElementRef;
+  @ViewChild('prev1', { static: true }) public prev1: ElementRef;
+  @ViewChild('prev2', { static: true }) public prev2: ElementRef;
+  @ViewChild('prev3', { static: true }) public prev3: ElementRef;
+  private cropper: Cropper;
 
   imageBase: ImageData = {
     scale: 1,
@@ -33,6 +35,14 @@ export class ImageCropComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  zoom(data: number) {
+    this.cropper.zoom(data);
+  }
+
+  rotate(data: number) {
+    this.cropper.rotate(data);
   }
 
   renderImage() {
@@ -58,14 +68,18 @@ export class ImageCropComponent implements OnInit {
     const imagePrev1 = this.prev1.nativeElement as HTMLImageElement;
     const imagePrev2 = this.prev2.nativeElement as HTMLImageElement;
     const imagePrev3 = this.prev3.nativeElement as HTMLImageElement;
-    const cropper = new Cropper(canvas, {
+    this.cropper = new Cropper(canvas, {
       aspectRatio: 1 / 1,
+      scalable: false,
       crop: () => {
-        const current = cropper.getCroppedCanvas();
+        const current = this.cropper.getCroppedCanvas();
         imagePrev1.src = current.toDataURL('image/png');
         imagePrev2.src = current.toDataURL('image/png');
         imagePrev3.src = current.toDataURL('image/png');
-      }
+      },
+      zoom: () => {
+        return 1000;
+      },
     });
   }
 }
