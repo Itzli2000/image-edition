@@ -1,0 +1,57 @@
+.pdf-main-bar {
+  background-color: #003459;
+  padding: 0.3rem;
+  color: #fff;
+
+  button {
+    border: 1px solid #00a8e8;
+    color: #fff;
+    border-radius: 8px;
+    margin-right: 0.3rem;
+    background-color: #00a8e8;
+    padding: 5px 20px;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background-color: rgba(#007ea7, 0.8);
+      color: #fff;
+      border-color: rgba(#007ea7, 0.8);
+    }
+  }
+}
+
+
+.croppit {
+  background-color: #efefef;
+  overflow: hidden;
+
+  .image-container {
+    max-width: 10000px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    canvas {
+      max-width: 100%;
+    }
+  }
+
+  .prevImage {
+    img {
+      display: block;
+      &.big {
+        width: 300px;
+        height: 300px;
+      }
+
+      &.medium {
+        width: 180px;
+        height: 180px;
+      }
+
+      &.small {
+        width: 110px;
+        height: 110px;
+      }
+    }
+  }
+}

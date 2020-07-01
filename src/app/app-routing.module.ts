@@ -1,3 +1,4 @@
+import { ImageCropComponent } from './components/image-crop/image-crop.component';
 import { ImageViewComponent } from './components/image-view/image-view.component';
 import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'pdf-view', component: PdfViewerComponent },
   { path: 'pdf-canvas', component: PdfCanvasComponent },
   { path: 'image-view/:id', component: ImageViewComponent },
+  { path: 'image-crop/:id', component: ImageCropComponent },
 ];
 
 @NgModule({

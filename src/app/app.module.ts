@@ -8,6 +8,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { ImageViewComponent } from './components/image-view/image-view.component';
 import { PdfCanvasComponent } from './components/pdf-canvas/pdf-canvas.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { ImageCropComponent } from './components/image-crop/image-crop.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     ResultsComponent,
     ImageViewComponent,
     PdfCanvasComponent,
-    TopBarComponent
+    TopBarComponent,
+    ImageCropComponent
   ],
   imports: [
     BrowserModule,

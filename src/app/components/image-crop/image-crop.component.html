@@ -1,0 +1,25 @@
+<section class="mb-3">
+  <p class="h5">File Customer Detail</p>
+  <div>
+    <p class="m-0">Customer ID: <span>qwerty123456</span></p>
+    <p class="m-0">Customer Name: <span>Juan Perez Perez</span></p>
+  </div>
+</section>
+
+<div class="row">
+  <button class="btn btn-primary" (click)="goBack()">Go back</button>
+</div>
+
+
+<div class="croppit row">
+  <div class="col-12 col-lg-9">
+    <div class="image-container">
+      <canvas #imgCanvas></canvas>
+    </div>
+  </div>
+  <div class="col-12 col-lg-3 prevImage">
+    <img #prev1 class="big" alt="Preview">
+    <img #prev2 class="medium" alt="Preview">
+    <img #prev3 class="small" alt="Preview">
+  </div>
+</div>
