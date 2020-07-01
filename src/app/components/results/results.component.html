@@ -1,0 +1,60 @@
+<section class="mb-3">
+  <p class="h5">File Customer Detail</p>
+  <div>
+    <p class="m-0">Customer ID: <span>qwerty123456</span></p>
+    <p class="m-0">Customer Name: <span>Juan Perez Perez</span></p>
+  </div>
+</section>
+
+<section>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Document Type</th>
+        <th scope="col">Exp. Date</th>
+        <th scope="col">File Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">DDA Perfiles</th>
+        <td>Identity Id</td>
+        <td>2023</td>
+        <td>
+          <a [routerLink]="['image-view',1]">Open</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">DDA Perfiles</th>
+        <td>Address Id</td>
+        <td>SEP 2020</td>
+        <td>
+          <a [routerLink]="['image-view',1]">Open</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">DDA Perfiles</th>
+        <td>Video Interview</td>
+        <td>N/A</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">DDA Perfiles</th>
+        <td>Digital contract (Using PDF.js)</td>
+        <td>N/A</td>
+        <td>
+          <a [routerLink]="['pdf-view']">Open</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">DDA Perfiles</th>
+        <td>Digital contract (using canvas transformations)</td>
+        <td>N/A</td>
+        <td>
+          <a [routerLink]="['pdf-canvas']">Open</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

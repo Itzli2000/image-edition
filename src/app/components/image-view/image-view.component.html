@@ -1,0 +1,31 @@
+<section class="mb-3">
+  <p class="h5">File Customer Detail</p>
+  <div>
+    <p class="m-0">Customer ID: <span>qwerty123456</span></p>
+    <p class="m-0">Customer Name: <span>Juan Perez Perez</span></p>
+  </div>
+</section>
+
+<div class="row">
+  <button class="btn btn-primary" (click)="goBack()">Go back</button>
+</div>
+
+<div class="pdf-main-bar d-flex flex-row justify-content-around pt-2 row">
+  <div class="col-12 col-lg-4">
+    <button (click)="updateScale(0.2)">+</button>
+    <button (click)="updateScale(-0.2)">-</button>
+  </div>
+  <div class="col-12 col-lg-4">
+    <p class="text-center mb-0">User document</p>
+  </div>
+  <div class="col-12 col-lg-4 text-right">
+    <button (click)="updateRotation(-90)"><i class="fa fa-undo" aria-hidden="true"></i></button>
+    <button (click)="updateRotation(90)"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+<div class="container-fluid px-0">
+  <div class="image-container row">
+    <canvas #imgCanvas></canvas>
+  </div>
+</div>
