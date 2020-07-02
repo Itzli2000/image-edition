@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ImageData } from '../../models/image.model';
 import { Location } from '@angular/common';
-// import 'cropperjs/dist/cropper.css';
 import Cropper from 'cropperjs';
 
 @Component({
@@ -16,12 +14,6 @@ export class ImageCropComponent implements OnInit {
   @ViewChild('prev2', { static: true }) public prev2: ElementRef;
   @ViewChild('prev3', { static: true }) public prev3: ElementRef;
   private cropper: Cropper;
-
-  imageBase: ImageData = {
-    scale: 1,
-    rotate: 0,
-  };
-  pageImg: any;
 
   constructor(
     private location: Location
@@ -45,6 +37,10 @@ export class ImageCropComponent implements OnInit {
     this.cropper.rotate(data);
   }
 
+  restore() {
+    this.cropper.reset();
+  }
+
   renderImage() {
     const url = './../../../assets/ine.jpg';
     const canvas = this.imgCanvas.nativeElement as HTMLCanvasElement;
@@ -54,13 +50,12 @@ export class ImageCropComponent implements OnInit {
     const context = canvas.getContext('2d');
     const image = new Image();
     image.src = url;
-    this.pageImg = image;
     image.onload = () => {
+      canvas.width = image.width;
+      canvas.height = image.height;
       context.drawImage(image, 0, 0, image.width, image.height);
       this.cropImage();
     };
-    canvas.width = image.width;
-    canvas.height = image.height;
   }
 
   cropImage() {

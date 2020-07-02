@@ -8,10 +8,21 @@
 
 <div class="row">
   <button class="btn btn-primary" (click)="goBack()">Go back</button>
+</div>
+
+<div class="pdf-main-bar d-flex flex-row justify-content-around pt-2 row">
+  <div class="col-12 col-lg-4">
   <button class="btn btn-primary" (click)="zoom(0.1)">+</button>
   <button class="btn btn-primary" (click)="zoom(-0.1)">-</button>
-  <button class="btn btn-primary" (click)="rotate(1)">rotate right</button>
-  <button class="btn btn-primary" (click)="rotate(-1)">rotate left</button>
+  </div>
+  <div class="col-12 col-lg-4">
+    <p class="text-center mb-0">User document</p>
+  </div>
+  <div class="col-12 col-lg-4 text-right">
+    <button class="btn btn-primary" (click)="rotate(1)"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+    <button class="btn btn-primary" (click)="rotate(-1)"><i class="fa fa-undo" aria-hidden="true"></i></button>
+    <button class="btn btn-primary" (click)="restore()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+  </div>
 </div>
 
 
